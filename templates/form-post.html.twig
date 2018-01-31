@@ -1,8 +1,11 @@
-<form action = "{{ path('new-post') }}" method="post"
+<form action = "{{ path('name-post') }}" method="post"
     enctype = "multipart/form-data">
+
 
     <p>Заголовок: <input type="text" name = "title"></p>
     <p>Текст: <input type="text" name = "text"></p>
-    <p>Картинка: <input type="file" name = "text"></p>
+    <p>Картинка: <input type="file" name = "image_path"></p>
+    <p>Submit: <input type="submit" name = "Submit" value="Отправить"></p>
+
 
 </form>

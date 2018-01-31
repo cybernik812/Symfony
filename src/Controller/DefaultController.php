@@ -31,16 +31,17 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $post = new Posts();
-        $post->setTitle($request->get('title');
-        $post->setText($request->get('text');
+        $post->setTitle($request->get('title'));
+        $post->setText($request->get('text'));
 
         /** @var UploadedFile $image */
 
+
         $image = $request->files->get('image_path');
         file_put_contents(__DIR__. '/../../public/' .
-            $image->getClientOriginalName());
-            file_get_contents($image['realPath']);
-        $post->setImagePath($image['originalName']);
+            $image->getClientOriginalName(),
+            file_get_contents($image->getRealPath()));
+        $post->setImagePath($image->getClientOriginalName());
         $em->persist($post);
         $em->flush();
 
