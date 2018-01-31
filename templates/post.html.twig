@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <p>Это пост с id = {{ id }}</p>
+    <p>Это пост с id = {{ dump(post) }}, Title: {{ post.title }}</p>
 
 {% endblock %}
 
